@@ -21,13 +21,13 @@ export class PessoasService {
     return this.http.get<Pessoa>(this.API_URL + '/pessoas/' + id);
   }
 
-  addPessoa(nome: string): Observable<any> {
-    const pessoa = {nome: nome};
+  addPessoa(nome: string, turmaId: number): Observable<any> {
+    const pessoa = {'nome': nome, 'turmaId': turmaId};
     return this.http.post(this.API_URL + '/pessoas', pessoa);
   }
 
-  editPessoa(id: number, nome: string): Observable<any> {
-    const pessoa = {nome: nome};
+  editPessoa(id: number, nome: string, turmaId: number): Observable<any> {
+    const pessoa = {'nome': nome, 'turmaId': turmaId};
     return this.http.patch(this.API_URL + '/pessoas/' + id, pessoa);
   }
 

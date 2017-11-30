@@ -1,6 +1,10 @@
+<a class="pull-right" routerLink="/admin/pessoas">
+  <i class="fa fa-arrow-left"></i> Lista de pessoas</a>
+
 <h1>{{pessoa.nome}}</h1>
 <hr>
 <h2>Turmas</h2>
-<ul>
-  <li *ngFor="let turma of pessoa.turmas">{{turma|json}}</li>
+<ul *ngFor="let turma of pessoa.turmas">
+  <li><strong>Codigo:</strong> {{turma.codigo}}</li>
+  <li><strong>Ano:</strong> {{turma.ano}}</li>
 </ul>

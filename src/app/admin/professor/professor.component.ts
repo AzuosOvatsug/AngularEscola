@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Router, ActivatedRoute, ParamMap} from '@angular/router';
 import {ProfessoresService} from '../professores.service';
-import {Pessoa} from '../pessoa.model';
+import {Professor} from '../professor.model';
 
 @Component({
   selector: 'app-professor',
@@ -19,7 +19,7 @@ export class ProfessorComponent implements OnInit {
       const id = parseInt(this.route.snapshot.paramMap.get('id'));
       this.professoresService.getProfessor(id)
         .subscribe(professor => this.professor = professor,
-          erro => this.router.navigate(['professor-nao-encontrado']));
+          erro => this.router.navigate(['turma-nao-encontrada']));
     }
   
   }

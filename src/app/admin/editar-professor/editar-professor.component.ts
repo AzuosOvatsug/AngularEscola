@@ -9,9 +9,9 @@ import {ActivatedRoute, Router} from "@angular/router";
   styleUrls: ['./editar-professor.component.css']
 })
 export class EditarProfessorComponent implements OnInit {
-  nome;
-  disciplina;
+  nome = null;
   id = null;
+  disciplinas = null;
   editar_ok = null;
   editar_erro = false;
 
@@ -22,17 +22,15 @@ export class EditarProfessorComponent implements OnInit {
 
   ngOnInit() {
     this.id = parseInt(this.route.snapshot.paramMap.get('id'));
-    if (this.id) {
-      this.professoresService.getProfessor(this.id)
-        .subscribe(professor => {
-          this.nome = professor.nome;
-          this.disciplina = professor.disciplina
-        });
-    }  
+    this.professoresService.getProfessor(this.id)
+    .subscribe(professor => this.nome = professor.nome);
+
+    this.disciplinasService.getDisciplinas()
+    .subscribe(disciplinas => this.disciplinas = disciplinas);
   }
 
   editar() {
-    this.professoresService.editProfessor(this.id , this.nome, this.disciplina)
+    this.professoresService.editProfessor(this.id , this.nome, parseInt(this.disciplinas))
     .subscribe(professor => {
         this.editar_ok = true;
         this.editar_erro = false;

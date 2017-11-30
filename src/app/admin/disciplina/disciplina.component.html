@@ -3,6 +3,7 @@
 <p [innerHTML]="disciplina.descricao"></p>
 
 <h2>Turmas</h2>
-<ul>
-  <li *ngFor="let turma of disciplina.turmas">{{turma|json}}</li>
+<ul *ngFor="let turma of disciplina.turmas">
+  <li><strong>Codigo:</strong> {{turma.codigo}}</li>
+  <li><strong>Ano:</strong> {{turma.ano}}</li>
 </ul>
