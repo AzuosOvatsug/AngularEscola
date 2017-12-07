@@ -1,0 +1,22 @@
+<a class="pull-right" routerLink="/admin/funcionarios">
+  <i class="fa fa-arrow-left"></i> Lista de Funcionarios</a>
+<h1>Detalhes do Funcionario</h1>
+<hr>
+<p>
+  <strong>Nome</strong>: {{funcionario.pessoa.nome}}</p>
+<p>
+  <strong>Tipo</strong>: {{funcionario.tipo}}</p>
+<p>
+  <strong>Cargo</strong>: {{funcionario.cargo.nome}}</p>
+<table class="table table-bordered table-striped table-hover">
+  <thead class="thead-dark">
+    <tr>
+      <th>Funções</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let funcionario of funcionarios">
+      <td>{{funcionario.funcao.nome}}</td>
+    </tr>
+  </tbody>
+</table>

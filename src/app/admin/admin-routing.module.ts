@@ -17,6 +17,10 @@ import {ProfessorComponent} from './professor/professor.component';
 import {ListaDeProfessoresComponent} from './lista-de-professores/lista-de-professores.component';
 import {CadastroProfessorComponent} from './cadastro-professor/cadastro-professor.component';
 import {EditarProfessorComponent} from './editar-professor/editar-professor.component';
+import {FuncionarioComponent} from './funcionario/funcionario.component';
+import {ListaDeFuncionariosComponent} from './lista-de-funcionarios/lista-de-funcionarios.component';
+import {CadastroFuncionarioComponent} from './cadastro-funcionario/cadastro-funcionario.component';
+import {EditarFuncionarioComponent} from './editar-funcionario/editar-funcionario.component';
 
 const routes: Routes = [
   {
@@ -36,6 +40,10 @@ const routes: Routes = [
       {path: 'professores/:id', component: ProfessorComponent},
       {path: 'cadastro-professor', component: CadastroProfessorComponent},
       {path: 'professores/:id/editar', component: EditarProfessorComponent},
+      {path: 'funcionarios', component: ListaDeFuncionariosComponent},
+      {path: 'funcionarios/:id', component: FuncionarioComponent},
+      {path: 'cadastro-funcionario', component: CadastroFuncionarioComponent},
+      {path: 'funcionarios/:id/editar', component: EditarFuncionarioComponent},
       {path: '', component: HomeComponent},
       {path: '**', component: PaginaNaoEncontradaComponent}
   ]}

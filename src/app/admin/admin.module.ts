@@ -27,6 +27,13 @@ import { ProfessorComponent } from './professor/professor.component';
 import { ListaDeProfessoresComponent } from './lista-de-professores/lista-de-professores.component';
 import { CadastroProfessorComponent } from './cadastro-professor/cadastro-professor.component';
 import { EditarProfessorComponent } from './editar-professor/editar-professor.component';
+import { ListaDeFuncionariosComponent } from '../admin/lista-de-funcionarios/lista-de-funcionarios.component';
+import { FuncionarioComponent } from '../admin/funcionario/funcionario.component';
+import { CadastroFuncionarioComponent } from '../admin/cadastro-funcionario/cadastro-funcionario.component';
+import { EditarFuncionarioComponent } from '../admin/editar-funcionario/editar-funcionario.component';
+import { FuncionariosService } from '../admin/funcionarios.service';
+import { CargosService } from '../admin/cargos.service';
+import { FuncoesService } from '../admin/funcoes.service';
 
 
 @NgModule({
@@ -55,13 +62,20 @@ import { EditarProfessorComponent } from './editar-professor/editar-professor.co
     ProfessorComponent,
     ListaDeProfessoresComponent,
     CadastroProfessorComponent,
-    EditarProfessorComponent
+    EditarProfessorComponent,
+    ListaDeFuncionariosComponent,
+    FuncionarioComponent,
+    CadastroFuncionarioComponent,
+    EditarFuncionarioComponent
   ],
   providers: [
     DisciplinasService,
     TurmasService,
     PessoasService,
-    ProfessoresService
+    ProfessoresService,
+    FuncionariosService,
+    CargosService,
+    FuncoesService
   ]
 })
 export class AdminModule {
