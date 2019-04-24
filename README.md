@@ -1,4 +1,4 @@
-# angular-escola
+# Resumo
 
 Software de gerenciamento escolar. 
 
